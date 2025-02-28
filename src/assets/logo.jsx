@@ -5,7 +5,7 @@ export default function Logo() {
     <Link to={'/'}>
       <svg
         width="16vw"
-        height="10vh"
+        height="16vh"
         viewBox="0 0 237 88"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

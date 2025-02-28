@@ -1,7 +1,7 @@
 export default function CallButton() {
   return (
     <>
-      <button className=" bg-white text-[#245A36] overflow-hidden cursor-pointer flex justify-between items-center pr-[1vw] rounded-md">
+      <button className=" bg-white text-[#7BA35A] text-[2vh] overflow-hidden cursor-pointer flex justify-between items-center pr-[1vw] rounded-md">
       <div className=" bg-[#245A36] mr-[1vh] p-[1vw]">
           <svg
                       width="1.5vw"
