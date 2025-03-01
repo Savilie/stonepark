@@ -34,6 +34,14 @@ DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = [os.getenv('HOST')]
 
+CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF'),]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Включаем поддержку HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 # Application definition
 
@@ -61,6 +69,7 @@ INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -166,15 +175,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-# Директории, где Django будет искать статические файлы (во время разработки)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles'),  # Указываем на папку staticfiles
+        os.path.join(BASE_DIR, 'static'),
 ]
-
-# Директория для сбора статических файлов (используется при deploy)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Указываем на папку static
 
 
 # Media files
