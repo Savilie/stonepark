@@ -84,23 +84,42 @@ export default function HomePage() {
           <h3 className="text-[4vh] font-bold">
             Что наши клиенты говорят о нас?
           </h3>
-          <div className=" flex">
-
-
-
-          </div>
+          <div className=" flex"></div>
         </div>
         <div className=" flex flex-col items-center">
-          <h3 className=" text-[3vh] font-bold mb-[1vh]"> Примеры дизайнов наших клиентов</h3>
+          <h3 className=" text-[3vh] font-bold mb-[1vh]">
+            {" "}
+            Примеры дизайнов наших клиентов
+          </h3>
           <p className=" text-[2vh]">Можете посмотреть в наших соцсетях</p>
           <div className=" flex w-[12vw] mt-[2vh] justify-between items-center">
-            <a href="https://web.telegram.org"><img src="src\assets\imgs\tg.svg" alt="Ссылка на телеграм" /></a>
-            <a href="https://instagram.com"><img src="src\assets\imgs\insta.svg" alt="Ссылка на инстаграм" /></a>
-            <a href="https://vk.com"><img src="src\assets\imgs\vk.svg" alt="Ссылка на телеграм" /></a>
+            <a href="https://web.telegram.org">
+              <img src="src\assets\imgs\tg.svg" alt="Ссылка на телеграм" />
+            </a>
+            <a href="https://instagram.com">
+              <img src="src\assets\imgs\insta.svg" alt="Ссылка на инстаграм" />
+            </a>
+            <a href="https://vk.com">
+              <img src="src\assets\imgs\vk.svg" alt="Ссылка на телеграм" />
+            </a>
           </div>
         </div>
       </section>
-      <SectionTransition text="Доставим заказ прямо к вам"/>
+      <SectionTransition text="Доставим заказ прямо к вам" />
+      <section className="h-[100vh] bg-[#EDE5DB] items-center flex px-[12vw]">
+        <div className="w-[60%] grid grid-cols-2">
+          <img className='min-w-[100%]' src="src\assets\imgs\Group 5.png" alt="Изображние Грузовика" />
+          <img className='min-w-[100%]' src="src\assets\imgs\image 1.png" alt="Изображние Грузовика" />
+          <img className=" col-span-2 justify-self-center min-w-[50%]" src="src\assets\imgs\image 2.png" alt="Изображние Грузовика" />
+        </div>
+        <div className="text-[3vh] w-[40%] bg-[#DFD8CE] h-fit px-[2vw] py-[2vh]">
+          <h3 className="font-semibold">Нужна помощь?</h3>
+          <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A]"/>
+          <p className=" leading-[3vh]">Наши менеджеры помогут вам со всеми вопросами, связанными с доставкой и оплатой</p>
+          <p className="font-bold mt-[3vh]">+7 (989) 421-18-18</p>
+        </div>
+      </section>
+      <SectionTransition text='Где нас найти?'/>
     </div>
   );
 }
