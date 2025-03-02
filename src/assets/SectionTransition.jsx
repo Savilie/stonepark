@@ -1,6 +1,6 @@
 export default function SectionTransition({ text }) {
   return (
-    <div className="h-[10vh] bg-[#245A36] flex justify-between px-[12vw] text-[#EDE5DB] items-center text-[2.5vh]">
+    <div className="h-[10vh] bg-[#245A36] flex justify-between px-[12vw] text-[#EDE5DB] items-center text-xl">
       <svg
         width="8vh"
         height="8vh"

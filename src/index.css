@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'LTsuperior-Bold';
+    src: 
+    local('LTsuperior Bold'),
+    local('LTsuperior-Bold'),
+    url('./assets/font/LTSuperior-Bold.otf');
+}
+@font-face {
+    font-family: 'LTsuperior-Medium';
+    src: 
+    local('LTsuperior Medium'),
+    local('LTsuperior-Medium'),
+    url('./assets/font/LTSuperior-Medium.otf');
+}
+@font-face {
+    font-family: 'LTsuperior-Regular';
+    src: 
+    local('LTsuperior Regular'),
+    local('LTsuperior-Regular'),
+    url('./assets/font/LTSuperior-Regular.otf');
+}
+@font-face {
+    font-family: 'LTsuperior-Semibold';
+    src: 
+    local('LTsuperior Semibold'),
+    local('LTsuperior-Semibold'),
+    url('./assets/font/LTSuperior-Semibold.otf');
+}
