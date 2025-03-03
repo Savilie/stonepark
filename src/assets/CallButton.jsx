@@ -2,8 +2,9 @@ export default function CallButton() {
   return (
     <>
       <button className=" bg-white text-[#7BA35A] text-[2vh] overflow-hidden cursor-pointer flex justify-between items-center pr-[1vw] rounded-md">
-      <div className=" bg-[#245A36] mr-[1vh] p-[1vw]">
+      <div className=" bg-[#245A36] mr-[1vh] p-[1vw] max-md:p-3 max-md:bg-[#7BA35A]">
           <svg
+          className=" max-md:w-8"
                       width="1.5vw"
                       height="2.5vh"
                       viewBox="0 0 18 18"
@@ -16,7 +17,7 @@ export default function CallButton() {
                       />
               </svg>
       </div>
-                <p>Заказать звонок</p>
+                <p className="max-md:pr-2 max-md:font-semibold">Заказать звонок</p>
       </button>
     </>
   );

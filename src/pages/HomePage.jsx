@@ -27,12 +27,12 @@ export default function HomePage() {
   return (
     <div id="cont" className="scroll-smooth ">
       <FixedCallButton />
-      <section className=" relative h-[100vh]">
-        <div className="px-[12vw] py-[3vh] h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
+      <section className=" relative h-[100vh] max-md:w-full">
+        <div className="px-[12vw] py-[3vh] max-md:px-8 h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
           <header className="flex justify-between items-center">
-            <Logo />
-            <div className=" bg-gray-500/30 text-[#EDE5DB] backdrop-blur-sm flex justify-between py-[1vh] px-[1vw] w-[30vw] text-8 rounded-md">
-              <div className=" flex flex-col">
+            <Logo className='max-md:w-fit' />
+            <div className=" bg-gray-500/30 text-[#EDE5DB] backdrop-blur-sm flex justify-between py-[1vh] px-[1vw] w-[30vw] max-md:w-auto max-md:backdrop-blur-none max-md:bg-white/0 text-8 rounded-md">
+              <div className=" flex flex-col max-md:hidden">
                 <Link
                   to="reviews"
                   smooth="true"
@@ -55,9 +55,10 @@ export default function HomePage() {
                   Контакты
                 </Link>
               </div>
-              <div className="flex flex-col justify-between w-[70%]">
+              <div className="flex flex-col justify-between w-[70%] max-md:w-auto">
                 <a className="flex items-center" href="">
                   <svg
+                  className=" max-md:hidden"
                     width="1.5vw"
                     height="2.5vh"
                     viewBox="0 0 18 18"
@@ -71,23 +72,23 @@ export default function HomePage() {
                   </svg>
                   <span>+7 (989) 421-18-18</span>
                 </a>
-                <a className="flex items-center" href="">
+                <a className="flex items-center max-md:hidden" href="">
                   Ростовская область, ул. Большая Садовая, дом пушкина 72
                 </a>
               </div>
             </div>
           </header>
-          <div className="mt-[15vh] text-[#EDE5DB] w-[40%]">
-            <h1 className=" text-4xl/[2rem] font-bold">
+          <div className="mt-[15vh] text-[#EDE5DB] w-[40%] max-md:w-full">
+            <h1 className=" text-4xl/[2rem] font-bold max-md:text-3xl">
               Мы оптово-розничный парк по продаже камней
             </h1>
-            <p className=" text-xl/[3rem]">Доставляем по всей России и СНГ</p>
+            <p className=" text-xl/[3rem] max-md:text-lg/[3rem]">Доставляем по всей России и СНГ</p>
             <CallButton />
           </div>
           <Link
             to="reviews"
             smooth="true"
-            className=" cursor-pointer absolute top-[95vh] left-[49vw] z-50"
+            className=" cursor-pointer absolute top-[95vh] left-[49vw] z-50 max-md:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -107,18 +108,20 @@ export default function HomePage() {
       <SectionTransition text="Натуральная красота в каждом камушке!" />
       <section
         id="reviews"
-        className=" flex flex-col items-center justify-between py-[8vh] h-[100vh] bg-[#EDE5DB]"
+        className=" flex flex-col items-center justify-between py-[8vh] h-[100vh] bg-[#EDE5DB] max-md:h-fit"
       >
         <RouterLink to="/">
-          <h2 className=" text-2xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-40 py-2 rounded-md">
+          <h2 className=" text-3xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-38 py-3 rounded-md max-md:px-16 max-md:text-2xl">
             Каталог камня
           </h2>
         </RouterLink>
+            <p className=" hidden max-md:block mr-22 mt-8">Отзывы наших покупателей</p>
+            <p className=" text-sm hidden max-md:block mr-7 ">Мы не скрываем оценку наших клиентов</p>
         <div className=" flex flex-col items-center ">
-          <h3 className="text-2xl font-bold">
+          <h3 className="text-2xl font-bold max-md:hidden">
             Что наши клиенты говорят о нас?
           </h3>
-          <div className=" flex justify-between w-[60vw] mt-10">
+          <div className=" flex justify-between w-[60vw] mt-10 max-md:block max-md:w-[85%] max-md:mt-5">
             {
               reviews.map((el) => {
                 return(
@@ -128,7 +131,7 @@ export default function HomePage() {
             }
           </div>
         </div>
-        <div className=" flex flex-col items-center">
+        <div className=" flex flex-col items-center max-md:hidden">
           <h3 className=" text-xl font-bold mb-[1vh]">
             {" "}
             Примеры дизайнов наших клиентов
@@ -150,9 +153,9 @@ export default function HomePage() {
       <SectionTransition text="Доставим заказ прямо к вам" />
       <section
         id="delivery"
-        className="h-[100vh] bg-[#EDE5DB] items-center flex px-[12vw]"
+        className="h-[100vh] bg-[#EDE5DB] items-center flex px-[12vw] max-md:block max-md:px-0 max-md:h-fit"
       >
-        <div className="w-[60%] grid grid-cols-2">
+        <div className="w-[60%] bg-[#EDE5DB] grid grid-cols-2 max-md:block max-md:mx-auto max-md:w-full max-md:py-8">
           <img
             className="min-w-[100%]"
             src="src\assets\imgs\Group 5.png"
@@ -164,12 +167,12 @@ export default function HomePage() {
             alt="Изображение Грузовика"
           />
           <img
-            className=" col-span-2 justify-self-center min-w-[50%]"
+            className=" col-span-2 justify-self-center min-w-[50%] max-md:w-full"
             src="src\assets\imgs\image 2.png"
             alt="Изображение Грузовика"
           />
         </div>
-        <div className="text-xl w-[40%] bg-[#DFD8CE] h-fit px-[2vw] py-[2vh]">
+        <div className="text-xl w-[40%] bg-[#DFD8CE] h-fit px-[2vw] py-[2vh] max-md:w-full">
           <h3 className="font-semibold">Нужна помощь?</h3>
           <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A]" />
           <p className=" leading-[3vh]">
@@ -182,20 +185,20 @@ export default function HomePage() {
       <SectionTransition text="Где нас найти?" />
       <section
         id="contacts"
-        className="px-[12vw] py-[8vh] h-[100vh] bg-[#EDE5DB]"
+        className="px-[12vw] max-md:px-8 py-[8vh] h-fit bg-[#EDE5DB]"
       >
-        <div className=" flex">
-          <div className="text-xl [&_p]:mb-8 w-[35%]">
+        <div className=" flex max-md:block max-md:h-fit">
+          <div className="text-xl [&_p]:mb-8 w-[35%] max-md:w-auto">
             <p className=" font-semibold">"Парк Камня"</p>
             <p>
-              Ростовская область, Мясниковский район, <br /> хутор Ленинакан,
+              Ростовская область, Мясниковский район, <br className=" max-md:hidden" /> хутор Ленинакан,
               Торговый проспект, 8
             </p>
             <p>
-              пн-пт 9:00 - 18:00 <br /> сб-вс 9:00 - 16:00
+              пн-пт 9:00 - 18:00 <br className=" max-md:hidden" /> сб-вс 9:00 - 16:00
             </p>
             <p>
-              Номер для связи <br />
+              Номер для связи <br className=" max-md:hidden" />
               <a href="" className=" flex">
                 <svg
                   width="28"
@@ -215,6 +218,7 @@ export default function HomePage() {
             </p>
           </div>
           <iframe
+          className=" max-md:w-full"
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A45f3329077f8f26ca4b492d78113784768bcf2c8cc5b3345a4777300bed75f59&amp;source=constructor"
             width="938"
             height="477"
@@ -223,15 +227,15 @@ export default function HomePage() {
         </div>
         <div className=" flex justify-center mt-[10vh]">
           <RouterLink to="/">
-            <h2 className=" text-2xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-40 py-2 rounded-md">
+            <h2 className=" text-2xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-40 py-2 rounded-md max-md:px-16 max-md:text-2xl">
               Каталог камня
             </h2>
           </RouterLink>
         </div>
       </section>
-      <footer className=" bg-[#171614] px-[12vw] py-8 text-[#EDE5DB]">
-        <div className=" flex justify-between h-30">
-          <div className=" flex flex-col justify-between">
+      <footer className=" bg-[#171614] px-[12vw] py-8 text-[#EDE5DB] ">
+        <div className=" flex justify-between h-30 max-md:h-fit">
+          <div className=" flex flex-col justify-between max-md:hidden">
             <Link to="reviews" smooth="true" className="cursor-pointer">
               Отзывы
             </Link>
@@ -242,14 +246,14 @@ export default function HomePage() {
               Контакты
             </Link>
           </div>
-          <div className=" flex flex-col justify-between w-[60%]">
+          <div className=" flex flex-col justify-between w-[60%] max-md:w-full">
             <p>
               Данный интернет-сайт носит исключительно информационный характер и
               не является публичной офертой, определяемой положением Статьи 437
               (п.2) Гражданского Кодекса РФ. Цены, указанные на сайте,
               не являются публичной офертой.
             </p>
-            <p>
+            <p className=" max-md:mt-10">
               Актуальные цены узнавайте по номеру (whatsApp): +7 (989) 421-18-18
             </p>
           </div>

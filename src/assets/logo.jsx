@@ -4,6 +4,7 @@ export default function Logo() {
   return (
     <Link to={'/'}>
       <svg
+      className=" md: w-40 h-40"
         width="16vw"
         height="16vh"
         viewBox="0 0 237 88"
