@@ -30,7 +30,7 @@ export default function HomePage() {
       <section className=" relative h-[100vh] max-md:w-full">
         <div className="px-[12vw] py-[3vh] max-md:px-8 h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
           <header className="flex justify-between items-center">
-            <Logo className='max-md:w-fit' />
+            <Logo className='max-md:w-fit' color='white'/>
             <div className=" bg-gray-500/30 text-[#EDE5DB] backdrop-blur-sm flex justify-between py-[1vh] px-[1vw] w-[30vw] max-md:w-auto max-md:backdrop-blur-none max-md:bg-white/0 text-8 rounded-md">
               <div className=" flex flex-col max-md:hidden">
                 <Link
@@ -110,7 +110,7 @@ export default function HomePage() {
         id="reviews"
         className=" flex flex-col items-center justify-between py-[8vh] h-[100vh] bg-[#EDE5DB] max-md:h-fit"
       >
-        <RouterLink to="/">
+        <RouterLink to="/Catalog">
           <h2 className=" text-3xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-38 py-3 rounded-md max-md:px-16 max-md:text-2xl">
             Каталог камня
           </h2>
@@ -125,7 +125,7 @@ export default function HomePage() {
             {
               reviews.map((el) => {
                 return(
-                  <CommentCard obj={el}/>
+                  <CommentCard key={el.id} obj={el}/>
                 )
               })
             }
@@ -226,7 +226,7 @@ export default function HomePage() {
           ></iframe>
         </div>
         <div className=" flex justify-center mt-[10vh]">
-          <RouterLink to="/">
+          <RouterLink to="/Catalog">
             <h2 className=" text-2xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-40 py-2 rounded-md max-md:px-16 max-md:text-2xl">
               Каталог камня
             </h2>
