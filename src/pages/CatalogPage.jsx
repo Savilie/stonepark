@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import axios from "axios";
 import CategoryButton from "../assets/CategoryButton";
 import FixedCallButton from "../assets/FixedCallButton/FixedCallButton";
+import ProductItem from "../assets/ProductItem";
 
 export default function CatalogPage() {
   const [categories, setCategories] = useState([]);
@@ -18,10 +19,22 @@ export default function CatalogPage() {
         console.log(error);
       });
     }, []);
-    console.log(categories);
+    
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://parkkamnya.ru/api/products")
+      .then(function (response) {
+        setProducts(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }, []);
+    console.log(products);
     
   return (
-    <div className=" bg-[#EDE5DB] h-[100vh]">
+    <div className=" bg-[#EDE5DB] h-fit">
       <FixedCallButton/>
       <div className="px-[12vw] py-[3vh] max-md:px-8">
         <header className="flex justify-between items-center">
@@ -64,6 +77,29 @@ export default function CatalogPage() {
             })
           }
         </div>
+      <div>
+        {
+          categories.map((category) => {
+            return(
+            <div>
+              <h1 className="my-4 text-4xl font-bold">{category.name}</h1>
+              <div className=" grid grid-cols-4 gap-x-4">
+              {
+                products.map((el) => {
+                  if (el.id == category.id){
+                    return(
+                      <ProductItem data={el} key={el.id} />
+                    )
+                  }
+                }
+              )
+              }
+              </div>
+            </div>
+            )
+          })
+        }
+      </div>
       </div>
     </div>
   );
