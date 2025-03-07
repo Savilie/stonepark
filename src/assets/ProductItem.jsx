@@ -31,9 +31,6 @@ export default function ProductItem(product) {
         })}
         <div className="swiper-button-prev">
           <svg
-            className=""
-            width="43"
-            height="43"
             viewBox="0 0 43 43"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +45,6 @@ export default function ProductItem(product) {
         </div>
         <div className="swiper-button-next">
           <svg
-            className=""
-            width="43"
-            height="43"
             viewBox="0 0 43 43"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

@@ -6,9 +6,16 @@ import axios from "axios";
 import CategoryButton from "../assets/CategoryButton";
 import FixedCallButton from "../assets/FixedCallButton/FixedCallButton";
 import ProductItem from "../assets/ProductItem";
+import ModalBG from "../assets/ModalBG";
+import ModalWindow from "../assets/ModalWindow";
 
 export default function CatalogPage() {
   const [categories, setCategories] = useState([]);
+  const [modalStatus, setModalStatus] = useState(false);
+  function changeModalStatus(status) {
+    setModalStatus(status);
+    console.log(modalStatus);
+  }
 
   useEffect(() => {
     axios
@@ -19,8 +26,8 @@ export default function CatalogPage() {
       .catch(function (error) {
         console.log(error);
       });
-    }, []);
-    
+  }, []);
+
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
@@ -31,23 +38,35 @@ export default function CatalogPage() {
       .catch(function (error) {
         console.log(error);
       });
-    }, []);
+  }, []);
 
-    const [currentCategory, setCurrentCategory] = useState(0)
-    
+  const [currentCategory, setCurrentCategory] = useState(0);
+
   return (
-    <div className=" bg-[#EDE5DB] h-fit">
-      <FixedCallButton/>
-      <div className="px-[12vw] py-[3vh] max-md:px-8">
-        <header className="flex justify-between items-center">
-          <Logo className="max-md:w-fit" color="#92877A" />
-          <div className=" text-[#171614] backdrop-blur-sm flex justify-between py-[1vh] px-[1vw] w-[20vw] max-md:w-auto max-md:backdrop-blur-none max-md:bg-white/0 text-8 rounded-md">
-            <div className="flex flex-col justify-between">
+    <div className=" bg-[#EDE5DB] h-fit relative">
+      {modalStatus ? (
+        <div
+          className="fixed h-full w-full z-1000"
+          onClick={() => changeModalStatus(false)}
+        >
+          <ModalBG />
+          <ModalWindow />
+        </div>
+      ) : null}
+      <div
+        className="fixed bottom-[35px] right-[30px] h-[60px] w-[60px] z-100"
+        onClick={() => changeModalStatus(true)}
+      >
+        <FixedCallButton />
+      </div>
+      <div className="px-[12vw] py-[3vh] max-lg:px-8">
+        <header className="flex justify-between items-center h-[10vh]">
+          <Logo className="max-lg:w-fit" color="#92877A" />
+          <div className=" text-[#171614] backdrop-blur-sm flex justify-between w-[18vw] h-full max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
+            <div className="flex flex-col justify-between max-lg:jus text-sm">
               <a className="flex items-center" href="">
                 <svg
-                  className=" max-md:hidden"
-                  width="1.5vw"
-                  height="2.5vh"
+                  className=" max-lg:hidden w-4 h-4"
                   viewBox="0 0 18 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -59,75 +78,76 @@ export default function CatalogPage() {
                 </svg>
                 <span>+7 (989) 421-18-18</span>
               </a>
-              <a className="flex items-center max-md:hidden" href="">
+              <a className="max-lg:hidden" href="">
                 Ростовская область, ул. Большая Садовая, дом пушкина 72
               </a>
             </div>
           </div>
         </header>
-        <div className="grid grid-cols-6 gap-x-4 max-md:flex overflow-clip">
-          <RouterLink to={'/'} className="text-[#EDE5DB] py-0.5 rounded-lg bg-[#7BA35A] mt-8 text-center shadow-md max-md:p-2">
+        <div className="grid grid-cols-6 gap-x-4 max-lg:flex overflow-clip">
+          <RouterLink
+            to={"/"}
+            className="text-[#EDE5DB] py-0.5 rounded-lg bg-[#7BA35A] mt-8 text-center shadow-md max-lg:p-2"
+          >
             Вернуться на главную
           </RouterLink>
         </div>
-        <div className="grid grid-cols-6 gap-x-4 mt-3 max-md:flex max-md:overflow-clip">
-          {
-            categories.map((el) => {
-              let colors = ''
-              if (currentCategory == el.id){
-                colors = 'text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-md:p-2 max-md:w-[100vw]'
-              }else{
-                colors = 'text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-md:p-2 max-md:w-[100vw]'
-              }
-              return(
-                <div className={colors} key={el.id} onClick={() => {
-                  if(currentCategory !== el.id){
-                    setCurrentCategory(el.id)
-                  }else{
-                    setCurrentCategory(0)
+        <div className="grid grid-cols-6 gap-x-4 mt-3 max-lg:flex max-lg:overflow-clip">
+          {categories.map((el) => {
+            let colors = "";
+            if (currentCategory == el.id) {
+              colors =
+                "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2 max-lg:w-[100vw]";
+            } else {
+              colors =
+                "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2 max-lg:w-[100vw]";
+            }
+            return (
+              <div
+                className={colors}
+                key={el.id}
+                onClick={() => {
+                  if (currentCategory !== el.id) {
+                    setCurrentCategory(el.id);
+                  } else {
+                    setCurrentCategory(0);
                   }
-                }}>
-                  <CategoryButton key={el.id} name={el.name}/>
-                </div>
-              )
-            })
-          }
-        </div>
-      <div>
-        {
-          categories.map((category) => {
-            if(currentCategory === 0 || category.id === currentCategory){
-              return(
-            <div key={category.id}>
-              <h1 className="my-4 text-4xl font-bold">{category.name}</h1>
-              <div className=" grid grid-cols-4 gap-x-4 max-md:flex overdlow-clip">
-              {
-                products.map((el) => {
-                  if (el.category == category.id){
-                    return(
-                      <ProductItem data={el} key={el.id} />
-                    )
-                  }
-                }
-              )
-              }
+                }}
+              >
+                <CategoryButton key={el.id} name={el.name} />
               </div>
-            </div>
-            )}
-          })
-        }
-      </div>
+            );
+          })}
+        </div>
+        <div>
+          {categories.map((category) => {
+            if (currentCategory === 0 || category.id === currentCategory) {
+              return (
+                <div key={category.id}>
+                  <h1 className="my-4 text-4xl font-bold">{category.name}</h1>
+                  <div className=" grid grid-cols-4 gap-x-4 max-lg:flex overdlow-clip">
+                    {products.map((el) => {
+                      if (el.category == category.id) {
+                        return <ProductItem data={el} key={el.id} />;
+                      }
+                    })}
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
       </div>
       <footer className=" bg-[#171614] px-[12vw] py-8 text-[#EDE5DB] ">
-        <div className=" flex justify-between h-30 max-md:h-fit">
-          <div className=" flex flex-col justify-between w-[60%] max-md:w-full">
+        <div className=" flex justify-between h-30 max-lg:h-fit">
+          <div className=" flex flex-col justify-between w-[60%] max-lg:w-full">
             <p>
               Данный интернет-сайт носит исключительно информационный характер и
               не является публичной офертой, определяемой положением Статьи 437
               (п.2) Гражданского Кодекса РФ. Цены, указанные на сайте,
               не являются публичной офертой.
             </p>
-            <p className=" max-md:mt-10">
+            <p className=" max-lg:mt-10">
               Актуальные цены узнавайте по номеру (whatsApp): +7 (989) 421-18-18
             </p>
           </div>

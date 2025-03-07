@@ -4,7 +4,7 @@ export default function Logo(props) {
   return (
     <Link to={"/"}>
       <svg
-        className=" w-[14vw] h-[7vw] max-md:w-[140px] max-md:h-[70px]"
+        className=" w-[14vw] h-[7vw] max-lg:w-[140px] max-lg:h-[70px]"
         viewBox="0 0 237 88"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
