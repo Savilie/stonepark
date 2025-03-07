@@ -15,21 +15,23 @@ export default function ProductItem(product) {
           prevEl: ".swiper-button-prev",
           nextEl: ".swiper-button-next",
         }}
-        className="h-[30%]"
+        className="h-[40%]"
       >
-        <SwiperSlide className="h-[30%]">
-          <img
-            className="h-full w-full"
-            src={"https://parkkamnya.ru/" + product.data.images[0].image}
-            alt=""
-          />
-          первый слайд
-        </SwiperSlide>
-        <SwiperSlide className="h-[30%]">второй слайд</SwiperSlide>
-        <SwiperSlide className="h-[30%]">третий слайд</SwiperSlide>
+        {product.data.images.map((el) => {
+          return (
+            <SwiperSlide key={el.image}>
+              <img
+                className="h-full w-full"
+                src={"https://parkkamnya.ru/" + el.image}
+                alt=""
+              />
+              первый слайд
+            </SwiperSlide>
+          );
+        })}
         <div className="swiper-button-prev">
           <svg
-          className=""
+            className=""
             width="43"
             height="43"
             viewBox="0 0 43 43"
@@ -46,7 +48,7 @@ export default function ProductItem(product) {
         </div>
         <div className="swiper-button-next">
           <svg
-          className=""
+            className=""
             width="43"
             height="43"
             viewBox="0 0 43 43"
@@ -62,7 +64,7 @@ export default function ProductItem(product) {
           </svg>
         </div>
       </Swiper>
-      <div className="p-2">
+      <div className="p-4">
         <p className=" text-[#7BA05C]">{product.data.name}</p>
       </div>
     </div>
