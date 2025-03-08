@@ -17,7 +17,6 @@ export default function HomePage() {
   const [modalStatus, setModalStatus] = useState(false);
   function changeModalStatus(status) {
     setModalStatus(status);
-    console.log(modalStatus);
   }
 
   useEffect(() => {
@@ -35,8 +34,10 @@ export default function HomePage() {
     <div id="cont" className="scroll-smooth font-['LTSuperior-Regular']">
       { modalStatus ? 
           (
-            <div className="fixed h-full w-full z-1000" onClick={() => changeModalStatus(false)}>
+            <div className="relative h-full w-full z-1000" >
+              <div onClick={() => changeModalStatus(false)}>
               <ModalBG/>
+              </div>
               <ModalWindow/>
             </div>
         )

@@ -14,7 +14,7 @@ export default function CatalogPage() {
   const [modalStatus, setModalStatus] = useState(false);
   function changeModalStatus(status) {
     setModalStatus(status);
-    console.log(modalStatus);
+    
   }
 
   useEffect(() => {
@@ -45,11 +45,10 @@ export default function CatalogPage() {
   return (
     <div className=" bg-[#EDE5DB] h-fit relative">
       {modalStatus ? (
-        <div
-          className="fixed h-full w-full z-1000"
-          onClick={() => changeModalStatus(false)}
-        >
-          <ModalBG />
+        <div className="relative h-full w-full z-1000">
+          <div onClick={() => changeModalStatus(false)}>
+            <ModalBG />
+          </div>
           <ModalWindow />
         </div>
       ) : null}

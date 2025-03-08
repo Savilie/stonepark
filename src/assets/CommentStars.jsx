@@ -9,7 +9,6 @@ export default function CommentStars(props) {
       stars.push("0");
     }
   }
-  console.log(stars);
   return (
     <div className="flex items-center">
       {stars.map((el) => {
