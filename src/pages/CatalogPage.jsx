@@ -91,15 +91,16 @@ export default function CatalogPage() {
             Вернуться на главную
           </RouterLink>
         </div>
-        <div className="grid grid-cols-6 gap-x-4 mt-3 max-lg:flex max-lg:overflow-clip">
-          {categories.map((el) => {
+        <div className={`gap-x-4 mt-3 overflow-x-scroll grid grid-cols-[repeat(${categories.length},_15%)]`}>
+          {
+            categories.map((el) => {
             let colors = "";
             if (currentCategory == el.id) {
               colors =
-                "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2 max-lg:w-[100vw]";
+                "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2";
             } else {
               colors =
-                "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2 max-lg:w-[100vw]";
+                "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2";
             }
             return (
               <div
@@ -116,7 +117,7 @@ export default function CatalogPage() {
                 <CategoryButton key={el.id} name={el.name} />
               </div>
             );
-          })}
+          })}  
         </div>
         <div>
           {categories.map((category) => {

@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "./swiperStyles.css";
 
 export default function ProductItem(product) {
+  console.log(product.data)
   return (
     <div className=" bg-[#F8F3ED] w-full overflow-clip rounded-lg">
       <Swiper
@@ -60,6 +61,7 @@ export default function ProductItem(product) {
       </Swiper>
       <div className="p-4">
         <p className=" text-[#7BA05C]">{product.data.name}</p>
+        <p>{product.data.short_description}</p>
       </div>
     </div>
   );
