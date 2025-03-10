@@ -1,13 +1,12 @@
 import axios, { Axios } from "axios";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 function sendBid(name, phone, comment) {
-  axios
-    .post("https://parkkamnya.ru/api/bids/", {
-      name: {name},
-      phone: {phone},
-      comment: {comment},
+  axios.post("https://parkkamnya.ru/api/bids/", {
+      name: { name },
+      phone: { phone },
+      comment: { comment },
     })
     .then(function (response) {
       console.log(response);
@@ -25,10 +24,10 @@ export default function ModalWindow() {
       </div>
       <form
         action={(data) => {
-          let name = data.get('name')
-          let phone = data.get('phone')
-          let comment = data.get('comment')
-          sendBid(name, phone, comment)
+          let name = data.get("name");
+          let phone = data.get("phone");
+          let comment = data.get("comment");
+          sendBid(name, phone, comment);
         }}
         method="post"
         className=" flex flex-col justify-between items-center py-[2%] max-lg:py-[5%]"
@@ -48,13 +47,14 @@ export default function ModalWindow() {
         <div className=" w-[80%]">
           <label htmlFor="phone">Номер телефона</label>
           <PhoneInput
-          country={'ru'}
-          regions={'ex-ussr'}
-          inputProps={{
-            name: "phone",
-            id: "phone",
-            required: 'true'
-          }}/>
+            country={"ru"}
+            regions={"ex-ussr"}
+            inputProps={{
+              name: "phone",
+              id: "phone",
+              required: "true",
+            }}
+          />
         </div>
         <div className=" w-[80%]">
           <label htmlFor="comment">Дополнительная информация</label>

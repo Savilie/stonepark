@@ -8,14 +8,20 @@ import FixedCallButton from "../assets/FixedCallButton/FixedCallButton";
 import ProductItem from "../assets/ProductItem";
 import ModalBG from "../assets/ModalBG";
 import ModalWindow from "../assets/ModalWindow";
+import { SwiperSlide, Swiper } from "swiper/react";
 
 export default function CatalogPage() {
+  const [viewPortWidth, setViewPortWidth] = useState([window.innerWidth])
   const [categories, setCategories] = useState([]);
   const [modalStatus, setModalStatus] = useState(false);
+  const [categoriesSlidesNumber, setCategoriesSlidesNumber] = useState(6)
   function changeModalStatus(status) {
     setModalStatus(status);
-    
   }
+
+  useEffect(() => {
+    setCategoriesSlidesNumber((viewPortWidth < 1024) ? 1.7 : 6)
+  }, [viewPortWidth])
 
   useEffect(() => {
     axios
@@ -92,19 +98,18 @@ export default function CatalogPage() {
           </RouterLink>
         </div>
         <div className=" w-full">
-          <div  className={`gap-x-4 mt-3 overflow-x-auto flex`}>
-            {
-              categories.map((el) => {
+          <Swiper slidesPerView={categoriesSlidesNumber} spaceBetween={10} className={`gap-x-4 mt-3 overflow-x-hidden flex`}>
+            {categories.map((el) => {
               let colors = "";
               if (currentCategory == el.id) {
                 colors =
-                  "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
+                  "text-[#EDE5DB] my-2 bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
               } else {
                 colors =
-                  "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
+                  "text-[#7C6845] my-2 bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
               }
               return (
-                <div
+                <SwiperSlide
                   className={colors}
                   key={el.id}
                   onClick={() => {
@@ -115,19 +120,23 @@ export default function CatalogPage() {
                     }
                   }}
                 >
-                  <CategoryButton key={el.id} name={el.name} />
-                </div>
+                  
+                    <CategoryButton key={el.id} name={el.name} />
+                  
+                </SwiperSlide>
               );
             })}
-          </div>
+          </Swiper>
         </div>
         <div>
           {categories.map((category) => {
             if (currentCategory === 0 || category.id === currentCategory) {
               return (
                 <div key={category.id}>
-                  <h1 className="my-7 text-4xl text-transparent bg-black bg-linear-r bg-clip-text from-black to-[#7D786D] font-['LTSuperior-Bold']">{category.name}</h1>
-                  <div className=" grid grid-cols-4 gap-x-4 max-lg:flex overdlow-clip">
+                  <h1 className="my-7 w-fit text-4xl bg-gradient-to-r from-black from-30%  to-[#5d5c52] to-70% text-transparent bg-clip-text font-['LTSuperior-Bold']">
+                    {category.name}
+                  </h1>
+                  <div className=" grid grid-cols-4 gap-x-4 max-lg:flex flex-col">
                     {products.map((el) => {
                       if (el.category == category.id) {
                         return <ProductItem data={el} key={el.id} />;

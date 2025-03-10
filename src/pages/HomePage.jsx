@@ -77,7 +77,7 @@ export default function HomePage() {
               <div className="flex flex-col justify-between w-[70%] max-lg:w-auto">
                 <a className="flex items-center" href="">
                   <svg
-                    className=" max-lg:hidden w-4 h-full"
+                    className=" max-lg:hidden w-4 h-full mr-2"
                     viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -155,16 +155,16 @@ export default function HomePage() {
             {" "}
             Примеры дизайнов наших клиентов
           </h3>
-          <p className=" text-lg">Можете посмотреть в наших соцсетях</p>
+          <p className=" text-md">Можете посмотреть в наших соцсетях</p>
           <div className=" flex w-[12vw] mt-[2vh] justify-between items-center">
             <a href="https://web.telegram.org">
-              <img src="src\assets\imgs\tg.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="src\assets\imgs\tg.svg" alt="Ссылка на телеграм" />
             </a>
             <a href="https://instagram.com">
-              <img src="src\assets\imgs\insta.svg" alt="Ссылка на инстаграм" />
+              <img className="size-10" src="src\assets\imgs\insta.svg" alt="Ссылка на инстаграм" />
             </a>
             <a href="https://vk.com">
-              <img src="src\assets\imgs\vk.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="src\assets\imgs\vk.svg" alt="Ссылка на телеграм" />
             </a>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function HomePage() {
         </div>
         <div className="text-xl w-[40%] bg-[#DFD8CE] h-fit px-[2vw] py-[2vh] max-lg:w-full">
           <h3 className="font-['LTSuperior-Bold']">Нужна помощь?</h3>
-          <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A]" />
+          <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A] max-lg:w-[17vw]" />
           <p className=" leading-[3vh]">
             Наши менеджеры помогут вам со всеми вопросами, связанными с
             доставкой и оплатой

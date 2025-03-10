@@ -5,9 +5,8 @@ import "swiper/css/navigation";
 import "./swiperStyles.css";
 
 export default function ProductItem(product) {
-  console.log(product.data)
   return (
-    <div className=" bg-[#F8F3ED] w-full overflow-clip rounded-lg">
+    <div className=" bg-[#F8F3ED] w-full overflow-clip rounded-lg shadow-md">
       <Swiper
         modules={[Navigation]}
         slidesPerView={1}
@@ -20,13 +19,14 @@ export default function ProductItem(product) {
       >
         {product.data.images.map((el) => {
           return (
-            <SwiperSlide key={el.image}>
-              <img
-                className="h-full w-full"
-                src={"https://parkkamnya.ru/" + el.image}
-                alt=""
-              />
-              первый слайд
+            <SwiperSlide className="h-[240px]" key={el.image}>
+              <div className=" h-[240px] overflow-hidden flex">
+                <img
+                  className="object-center w-full"
+                  src={"https://parkkamnya.ru/" + el.image}
+                  alt=""
+                />
+              </div>
             </SwiperSlide>
           );
         })}
