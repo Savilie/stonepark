@@ -17,7 +17,7 @@ export default function CommentCard(obj) {
           {/* {<CommentStars number={3} />} */}
         </div>
       </div>
-      <p className=" text-[#7BA35A]">{review.reviewer_name}</p>
+      <p className="mt-5 text-[#7BA35A]">{review.reviewer_name}</p>
       <p>{review.review_text}</p>
     </article>
   );

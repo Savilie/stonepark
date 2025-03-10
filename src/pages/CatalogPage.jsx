@@ -43,7 +43,7 @@ export default function CatalogPage() {
   const [currentCategory, setCurrentCategory] = useState(0);
 
   return (
-    <div className=" bg-[#EDE5DB] h-fit relative">
+    <div className=" bg-[#EDE5DB] font-['LTSuperior-Regular'] h-fit relative">
       {modalStatus ? (
         <div className="relative h-full w-full z-1000">
           <div onClick={() => changeModalStatus(false)}>
@@ -91,40 +91,42 @@ export default function CatalogPage() {
             Вернуться на главную
           </RouterLink>
         </div>
-        <div className={`gap-x-4 mt-3 overflow-x-scroll grid grid-cols-[repeat(${categories.length},_15%)]`}>
-          {
-            categories.map((el) => {
-            let colors = "";
-            if (currentCategory == el.id) {
-              colors =
-                "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2";
-            } else {
-              colors =
-                "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md cursor-pointer max-lg:p-2";
-            }
-            return (
-              <div
-                className={colors}
-                key={el.id}
-                onClick={() => {
-                  if (currentCategory !== el.id) {
-                    setCurrentCategory(el.id);
-                  } else {
-                    setCurrentCategory(0);
-                  }
-                }}
-              >
-                <CategoryButton key={el.id} name={el.name} />
-              </div>
-            );
-          })}  
+        <div className=" w-full">
+          <div  className={`gap-x-4 mt-3 overflow-x-auto flex`}>
+            {
+              categories.map((el) => {
+              let colors = "";
+              if (currentCategory == el.id) {
+                colors =
+                  "text-[#EDE5DB] bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
+              } else {
+                colors =
+                  "text-[#7C6845] bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
+              }
+              return (
+                <div
+                  className={colors}
+                  key={el.id}
+                  onClick={() => {
+                    if (currentCategory !== el.id) {
+                      setCurrentCategory(el.id);
+                    } else {
+                      setCurrentCategory(0);
+                    }
+                  }}
+                >
+                  <CategoryButton key={el.id} name={el.name} />
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div>
           {categories.map((category) => {
             if (currentCategory === 0 || category.id === currentCategory) {
               return (
                 <div key={category.id}>
-                  <h1 className="my-4 text-4xl font-bold">{category.name}</h1>
+                  <h1 className="my-7 text-4xl text-transparent bg-black bg-linear-r bg-clip-text from-black to-[#7D786D] font-['LTSuperior-Bold']">{category.name}</h1>
                   <div className=" grid grid-cols-4 gap-x-4 max-lg:flex overdlow-clip">
                     {products.map((el) => {
                       if (el.category == category.id) {

@@ -95,8 +95,8 @@ export default function HomePage() {
               </div>
             </div>
           </header>
-          <div className="mt-[25vh] text-[#EDE5DB] w-[40%] max-lg:w-full">
-            <h1 className=" text-4xl/[2rem] font-['LTSuperior-Bold'] max-lg:text-3xl">
+          <div className="mt-[25vh] text-[#EDE5DB] w-[50%] max-lg:w-full">
+            <h1 className=" text-4xl/[2.5rem] font-['LTSuperior-Bold'] max-lg:text-3xl">
               Мы оптово-розничный парк по продаже камней
             </h1>
             <p className=" text-xl/[3rem] max-lg:text-lg/[3rem]">

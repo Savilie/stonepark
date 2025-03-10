@@ -1,7 +1,8 @@
 .swiper-button-next,
 .swiper-button-prev{
     color: red;
-    width: 30px;
+    width: 33px;
+    height: 33px;
 }
 .swiper-button-next::after,
 .swiper-button-prev::after{
