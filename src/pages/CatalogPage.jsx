@@ -51,7 +51,7 @@ export default function CatalogPage() {
   return (
     <div className=" bg-[#EDE5DB] font-['LTSuperior-Regular'] h-fit relative">
       {modalStatus ? (
-        <div className="relative h-full w-full z-1000">
+        <div className="relative h-full flex w-full z-1000">
           <div onClick={() => changeModalStatus(false)}>
             <ModalBG />
           </div>
@@ -67,11 +67,15 @@ export default function CatalogPage() {
       <div className="px-[12vw] py-[3vh] max-lg:px-8">
         <header className="flex justify-between items-center h-[10vh]">
           <Logo className="max-lg:w-fit" color="#92877A" />
-          <div className=" text-[#171614] backdrop-blur-sm flex justify-between w-[18vw] h-full max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
-            <div className="flex flex-col justify-between max-lg:jus text-sm">
-              <a className="flex items-center" href="">
+          <div className=" text-[#171614] backdrop-blur-sm flex justify-between w-[15vw] h-[80%] max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
+            <div className="flex flex-col justify-between text-sm">
+              <a className="flex items-center cursor-pointer" onClick={() => 
+                {
+                  navigator.clipboard.writeText('+7 (989) 421-18-18')
+                  alert('Скпировано')
+                }}>
                 <svg
-                  className=" max-lg:hidden w-4 h-4"
+                  className=" max-lg:hidden size-4 mb-1 mr-3"
                   viewBox="0 0 18 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +87,7 @@ export default function CatalogPage() {
                 </svg>
                 <span>+7 (989) 421-18-18</span>
               </a>
-              <a className="max-lg:hidden" href="">
-                Ростовская область, ул. Большая Садовая, дом пушкина 72
+              <a className="max-lg:hidden" href="">Село Чалтырь ул. Ростовская 53
               </a>
             </div>
           </div>

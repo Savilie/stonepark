@@ -34,7 +34,7 @@ export default function HomePage() {
     <div id="cont" className="scroll-smooth font-['LTSuperior-Regular']">
       { modalStatus ? 
           (
-            <div className="relative h-full w-full z-1000" >
+            <div className="relative w-full flex z-1000" >
               <div onClick={() => changeModalStatus(false)}>
               <ModalBG/>
               </div>
@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="px-[12vw] py-[3vh] max-lg:px-8 h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
           <header className="flex justify-between items-center h-[10vh]">
             <Logo className="max-lg:w-fit" color="white" />
-            <div className=" bg-gray-500/30 text-[#EDE5DB] text-sm backdrop-blur-sm flex justify-between h-[6vw] py-[1vh] px-[1vw] w-[30vw] max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
+            <div className=" bg-gray-500/30 text-[#EDE5DB] text-sm backdrop-blur-sm flex justify-between h-full py-[1vh] px-[1vw] w-[24vw] max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
               <div className=" flex flex-col justify-between max-lg:hidden">
                 <Link
                   to="reviews"
@@ -74,8 +74,12 @@ export default function HomePage() {
                   Контакты
                 </Link>
               </div>
-              <div className="flex flex-col justify-between w-[70%] max-lg:w-auto">
-                <a className="flex items-center" href="">
+              <div className="flex flex-col justify-between w-[65%] max-lg:w-auto">
+                <a className="flex items-center cursor-pointer" onClick={() => 
+                {
+                  navigator.clipboard.writeText('+7 (989) 421-18-18')
+                  alert('Скпировано')
+                }}>
                   <svg
                     className=" max-lg:hidden w-4 h-full mr-2"
                     viewBox="0 0 18 18"
@@ -89,8 +93,7 @@ export default function HomePage() {
                   </svg>
                   <span className="mt-[2%]">+7 (989) 421-18-18</span>
                 </a>
-                <a className="flex items-center max-lg:hidden" href="">
-                  Ростовская область, ул. Большая Садовая, дом пушкина 72
+                <a className="flex items-center max-lg:hidden" href="">Село Чалтырь ул. Ростовская 53
                 </a>
               </div>
             </div>
@@ -102,7 +105,9 @@ export default function HomePage() {
             <p className=" text-xl/[3rem] max-lg:text-lg/[3rem]">
               Доставляем по всей России и СНГ
             </p>
+            <div onClick={() => changeModalStatus(true)}>
             <CallButton />
+            </div>
           </div>
           <Link
             to="reviews"

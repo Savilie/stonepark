@@ -1,6 +1,6 @@
 export default function CategoryButton(category) {
   return (
-    <div>
+    <div className=" select-none">
       {category.name}
     </div>
   );

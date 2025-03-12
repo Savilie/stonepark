@@ -19,8 +19,8 @@ export default function ProductItem(product) {
       >
         {product.data.images.map((el) => {
           return (
-            <SwiperSlide className="h-[240px]" key={el.image}>
-              <div className=" h-[240px] overflow-hidden flex">
+            <SwiperSlide className="h-[240px] overflow-crop flex" key={el.image}>
+              <div className='flex h-full'>
                 <img
                   className="object-center w-full"
                   src={"https://parkkamnya.ru/" + el.image}
