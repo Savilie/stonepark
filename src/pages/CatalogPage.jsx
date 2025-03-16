@@ -9,14 +9,20 @@ import ProductItem from "../assets/ProductItem";
 import ModalBG from "../assets/ModalBG";
 import ModalWindow from "../assets/ModalWindow";
 import { SwiperSlide, Swiper } from "swiper/react";
+import ModalItemCard from "../assets/ModalItemCard";
 
 export default function CatalogPage() {
   const [viewPortWidth, setViewPortWidth] = useState([window.innerWidth])
   const [categories, setCategories] = useState([]);
-  const [modalStatus, setModalStatus] = useState(false);
   const [categoriesSlidesNumber, setCategoriesSlidesNumber] = useState(6)
-  function changeModalStatus(status) {
+  const [modalStatus, setModalStatus] = useState(false);
+  const [modalType, setModalType] = useState(false)
+  //false = bid, true = itemCard
+  const [currentItemData, setCurrentItemData] = useState({})
+  function changeModalStatus(status, type, item) {
     setModalStatus(status);
+    setModalType(type);
+    setCurrentItemData(item);
   }
 
   useEffect(() => {
@@ -52,15 +58,17 @@ export default function CatalogPage() {
     <div className=" bg-[#EDE5DB] font-['LTSuperior-Regular'] h-fit relative">
       {modalStatus ? (
         <div className="relative h-full flex w-full z-1000">
-          <div onClick={() => changeModalStatus(false)}>
+          <div onClick={() => changeModalStatus(false, false)}>
             <ModalBG />
           </div>
-          <ModalWindow />
+          {
+            modalType ? <ModalItemCard data={currentItemData} onClick={() => changeModalStatus(false, false)} /> : <ModalWindow />
+          }
         </div>
       ) : null}
       <div
         className="fixed bottom-[35px] right-[30px] h-[60px] w-[60px] z-100"
-        onClick={() => changeModalStatus(true)}
+        onClick={() => changeModalStatus(true, false)}
       >
         <FixedCallButton />
       </div>
@@ -136,13 +144,15 @@ export default function CatalogPage() {
             if (currentCategory === 0 || category.id === currentCategory) {
               return (
                 <div key={category.id}>
-                  <h1 className="my-7 w-fit text-4xl bg-gradient-to-r from-black from-30%  to-[#5d5c52] to-70% text-transparent bg-clip-text font-['LTSuperior-Bold']">
+                  <h1 className="my-7 w-fit text-4xl bg-gradient-to-r from-black from-0%  to-[#5d5c52] to-100% text-transparent bg-clip-text font-['LTSuperior-Bold']">
                     {category.name}
                   </h1>
                   <div className=" grid grid-cols-4 gap-x-4 max-lg:flex flex-col">
                     {products.map((el) => {
                       if (el.category == category.id) {
-                        return <ProductItem data={el} key={el.id} />;
+                        return (
+                            <ProductItem data={el} key={el.id} onClick={() => changeModalStatus(true, true, {el})}/>
+                        )
                       }
                     })}
                   </div>

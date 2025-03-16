@@ -149,7 +149,7 @@ export default function HomePage() {
           <h3 className="text-2xl font-['LTSuperior-Bold'] max-lg:hidden">
             Что наши клиенты говорят о нас?
           </h3>
-          <div className=" flex justify-between w-[60vw] mt-10 max-lg:block max-lg:w-[85%] max-lg:mt-5">
+          <div className=" grid grid-cols-3 gap-2 justify-between w-[60vw] mt-10 max-lg:block max-lg:w-[85%] max-lg:mt-5">
             {reviews.map((el) => {
               return <CommentCard key={el.id} obj={el} />;
             })}
@@ -218,8 +218,9 @@ export default function HomePage() {
             <p>График работы ежедневно с 9:00 до 18:00</p>
             <p>
               Номер для связи <br className=" max-lg:hidden" />
-              <a href="" className=" flex">
+              <a href="https://wa.me/79894211818?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." className=" flex">
                 <svg
+                className=" mr-2"
                   width="28"
                   height="28"
                   viewBox="0 0 28 28"
@@ -246,7 +247,7 @@ export default function HomePage() {
         </div>
         <div className=" flex justify-center mt-[10vh]">
           <RouterLink to="/Catalog">
-            <h2 className=" text-3xl font-bold text-[#EDE5DB] bg-[#7BA35A] px-38 py-3 rounded-md max-lg:px-16 max-lg:text-2xl">
+            <h2 className=" text-3xl font-['LTSuperior-Bold'] text-[#EDE5DB] bg-[#7BA35A] px-38 py-3 rounded-md max-lg:px-16 max-lg:text-2xl">
               Каталог камня
             </h2>
           </RouterLink>

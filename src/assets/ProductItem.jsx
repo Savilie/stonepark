@@ -15,14 +15,17 @@ export default function ProductItem(product) {
           prevEl: ".swiper-button-prev",
           nextEl: ".swiper-button-next",
         }}
-        className="h-[40%]"
+        className="h-[45%]"
       >
         {product.data.images.map((el) => {
           return (
-            <SwiperSlide className="h-[240px] overflow-crop flex" key={el.image}>
-              <div className='flex h-full'>
+            <SwiperSlide
+              className="h-[300px] overflow-crop flex"
+              key={el.image}
+            >
+              <div className="flex h-full overflow-crop">
                 <img
-                  className="object-center w-full"
+                  className="object-center w-full aspect-[1/1]"
                   src={"https://parkkamnya.ru/" + el.image}
                   alt=""
                 />
@@ -59,9 +62,19 @@ export default function ProductItem(product) {
           </svg>
         </div>
       </Swiper>
-      <div className="p-4">
-        <p className=" text-[#7BA05C]">{product.data.name}</p>
-        <p>{product.data.short_description}</p>
+      <div className=" flex flex-col justify-between p-4 h-[55%]">
+        <div>
+          <p className=" text-[#7BA05C]">{product.data.name}</p>
+          <p>{product.data.short_description}</p>
+        </div>
+        <p
+          className=" cursor-pointer text-[#7BA05C]"
+          onClick={() => {
+            product.onClick();
+          }}
+        >
+          Подробнее
+        </p>
       </div>
     </div>
   );
