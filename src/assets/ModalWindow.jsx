@@ -18,7 +18,7 @@ function sendBid(name, phone, comment) {
 
 export default function ModalWindow() {
   return (
-    <div className="fixed left-0 right-0 m-[20vh_auto] w-[50vw] h-fit z-1004 bg-white rounded-lg  max-lg:w-[80vw]">
+    <div className="fixed w-[50vw] top-[50%] left-[50%] -translate-1/2 h-fit z-1004 bg-white rounded-lg  max-lg:w-[80vw]">
       <div className=" flex justify-between p-4 rounded-t-lg border-b border-black/10 bg-[#7BA35A] text-white">
         <p>Оставьте свои контакты и мы вам перезвоним</p>
       </div>

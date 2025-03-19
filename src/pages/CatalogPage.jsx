@@ -67,7 +67,7 @@ export default function CatalogPage() {
         </div>
       ) : null}
       <div
-        className="fixed bottom-[35px] right-[30px] h-[60px] w-[60px] z-100"
+        className="fixed bottom-[35px] right-[30px] h-[60px] w-[60px] z-100"z
         onClick={() => changeModalStatus(true, false)}
       >
         <FixedCallButton />
