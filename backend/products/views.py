@@ -36,19 +36,19 @@ class CategoryAPIView(APIView):
 
 class BidAPIView(APIView):
 
-    @staticmethod
-    def get(request):
-
+    def get(self, request):
+        
         bids = Bid.objects.all()
         serializer = BidSerializer(bids, many=True)
-
+        
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @staticmethod
-    def post(request):
-
+    def post(self, request):
+        
         serializer = BidSerializer(data=request.data)
-
+        
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

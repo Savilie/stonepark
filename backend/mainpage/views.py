@@ -17,14 +17,14 @@ class ReviewAPIView(APIView):
 
         return Response(serializer.data)
 
-    @staticmethod
-    def post(request):
-
-        serializer = ReviewSerializer(data=request.data)
-
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #@staticmethod
+    #def post(request):
+#
+#        serializer = ReviewSerializer(data=request.data)
+#
+#        if serializer.is_valid():
+#            serializer.save()
+#            return Response(serializer.data, status=status.HTTP_201_CREATED)
+#
+#        else:
+#            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -121,6 +121,7 @@ CORS_ALLOW_METHODS = (
 
 CORS_ALLOW_HEADERS = (
     *cors_default_headers,
+    "Access-Control-Allow-Origin",
 )
 
 # Database
