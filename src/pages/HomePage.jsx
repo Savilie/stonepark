@@ -127,7 +127,7 @@ export default function HomePage() {
             </svg>
           </Link>
         </div>
-        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(src/assets/bg.png)] bg-no-repeat bg-cover"></div>
+        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(public/bg.png)] bg-no-repeat bg-cover"></div>
       </section>
       <SectionTransition text="Натуральная красота в каждом камушке!" />
       <section
@@ -163,13 +163,13 @@ export default function HomePage() {
           <p className=" text-md">Можете посмотреть в наших соцсетях</p>
           <div className=" flex w-[12vw] mt-[2vh] justify-between items-center">
             <a href="https://web.telegram.org">
-              <img className="size-10" src="src\assets\imgs\tg.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="public\tg.svg" alt="Ссылка на телеграм" />
             </a>
             <a href="https://instagram.com">
-              <img className="size-10" src="src\assets\imgs\insta.svg" alt="Ссылка на инстаграм" />
+              <img className="size-10" src="public\insta.svg" alt="Ссылка на инстаграм" />
             </a>
             <a href="https://vk.com">
-              <img className="size-10" src="src\assets\imgs\vk.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="public\vk.svg" alt="Ссылка на телеграм" />
             </a>
           </div>
         </div>
@@ -182,17 +182,17 @@ export default function HomePage() {
         <div className="w-[60%] bg-[#EDE5DB] grid grid-cols-2 max-lg:block max-lg:mx-auto max-lg:w-full max-lg:py-8">
           <img
             className="min-w-[100%]"
-            src="src\assets\imgs\Group 5.png"
+            src="public\Group 5.png"
             alt="Изображение Грузовика"
           />
           <img
             className="min-w-[100%]"
-            src="src\assets\imgs\image 1.png"
+            src="public\image 1.png"
             alt="Изображение Грузовика"
           />
           <img
             className=" col-span-2 justify-self-center min-w-[50%] max-lg:w-full"
-            src="src\assets\imgs\image 2.png"
+            src="public\image 2.png"
             alt="Изображение Грузовика"
           />
         </div>
