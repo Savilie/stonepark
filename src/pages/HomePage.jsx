@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="px-[12vw] py-[3vh] max-lg:px-8 h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
           <header className="flex justify-between items-center h-[10vh]">
             <Logo className="max-lg:w-fit" color="white" />
-            <div className=" bg-gray-500/30 text-[#EDE5DB] text-sm backdrop-blur-sm flex justify-between h-full py-[1vh] px-[1vw] w-[24vw] max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
+            <div className=" bg-gray-500/30 text-[#EDE5DB] text-sm backdrop-blur-sm flex justify-between h-full py-[1vh] px-[1vw] w-[24vw] max-lg:flex max-lg:items-center max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
               <div className=" flex flex-col justify-between max-lg:hidden">
                 <Link
                   to="reviews"

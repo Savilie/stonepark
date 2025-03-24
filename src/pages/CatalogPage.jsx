@@ -75,7 +75,7 @@ export default function CatalogPage() {
       <div className="px-[12vw] py-[3vh] max-lg:px-8">
         <header className="flex justify-between items-center h-[10vh]">
           <Logo className="max-lg:w-fit" color="#92877A" />
-          <div className=" text-[#171614] backdrop-blur-sm flex justify-between w-[15vw] h-[80%] max-lg:w-auto max-lg:backdrop-blur-none max-lg:bg-white/0 text-8 rounded-md">
+          <div className=" text-[#171614] backdrop-blur-sm flex justify-between w-[15vw] h-[80%] max-lg:w-auto max-lg:backdrop-blur-none max-lg:items-center max-lg:bg-white/0 text-8 rounded-md">
             <div className="flex flex-col justify-between text-sm">
               <a className="flex items-center cursor-pointer" onClick={() => 
                 {
@@ -147,7 +147,7 @@ export default function CatalogPage() {
                   <h1 className="my-7 w-fit text-4xl bg-gradient-to-r from-black from-0%  to-[#5d5c52] to-100% text-transparent bg-clip-text font-['LTSuperior-Bold']">
                     {category.name}
                   </h1>
-                  <div className=" grid grid-cols-4 gap-x-4 max-lg:flex flex-col">
+                  <div className=" grid grid-cols-4 gap-x-4 max-lg:flex max-lg:gap-y-4 flex-col">
                     {products.map((el) => {
                       if (el.category == category.id) {
                         return (
