@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая заявка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f5e9;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #e8c8a0;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin: -25px -25px 20px -25px;
+            color: #5a4a3a;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .field {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #d4c9b8;
+        }
+        .field:last-child {
+            border-bottom: none;
+        }
+        .field-label {
+            color: #5a7247;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .field-value {
+            padding: 8px;
+            background-color: #fdfaf5;
+            border-radius: 4px;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            padding-top: 15px;
+            border-top: 1px solid #e8c8a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Новая заявка
+        </div>
+
+        <div class="field">
+            <span class="field-label">Имя</span>
+            <div class="field-value">{{ name }}</div>
+        </div>
+
+        <div class="field">
+            <span class="field-label">Номер телефона</span>
+            <div class="field-value">{{ number }}</div>
+        </div>
+
+        <div class="field">
+            <span class="field-label">Дополнительная информация</span>
+            <div class="field-value">{{ info }}</div>
+        </div>
+
+        <div class="footer">
+            {{ date }}
+        </div>
+    </div>
+</body>
+</html>

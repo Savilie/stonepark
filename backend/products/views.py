@@ -4,6 +4,7 @@ from rest_framework import status
 from .models import *
 from .serializers import *
 
+from .tasks import send_email_async
 
 class ProductAPIView(APIView):
 
@@ -49,6 +50,17 @@ class BidAPIView(APIView):
         
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+            number = f"""{serializer.validated_data.get('number', None)}"""
+
+            name = f"""{serializer.validated_data.get('name', 'Не указано')}"""
+
+            info = f"""{serializer.validated_data.get('number', 'Не указана')}"""
+
+            if number:
+
+                send_email_async.delay(name=name, number=number, info=info)
+
+                return Response(status=status.HTTP_202_ACCEPTED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
