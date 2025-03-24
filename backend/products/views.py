@@ -55,12 +55,14 @@ class BidAPIView(APIView):
 
             name = f"""{serializer.validated_data.get('name', 'Не указано')}"""
 
-            info = f"""{serializer.validated_data.get('number', 'Не указана')}"""
+            info = f"""{serializer.validated_data.get('comment', 'Не указана')}"""
 
             if number:
 
                 send_email_async.delay(name=name, number=number, info=info)
 
                 return Response(status=status.HTTP_202_ACCEPTED)
+            else:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
