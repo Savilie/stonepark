@@ -29,6 +29,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
+# Celery and redis settings
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')  # Используем Redis как брокер сообщений
+CELERY_RESULT_BACKEND = os.getenv('CELERY_BROKER_URL')  # Хранение результатов задач
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC+3'
+
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
