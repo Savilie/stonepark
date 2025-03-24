@@ -23,4 +23,6 @@ else
   echo "Superuser credentials not provided. Skipping superuser creation."
 fi
 
-gunicorn --workers=4 --bind 0.0.0.0:8000 stonepark.wsgi
+gunicorn --workers=4 --bind 0.0.0.0:8000 stonepark.wsgi &
+
+celery -A stonepark worker --loglevel=info

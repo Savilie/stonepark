@@ -35,7 +35,15 @@ CELERY_RESULT_BACKEND = os.getenv('CELERY_BROKER_URL')  # Хранение ре�
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC+3'
+CELERY_TIMEZONE = 'UTC'
+
+# Email settins
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('EMAIL_HOST')  # Хост вашего SMTP-сервера
+EMAIL_PORT = os.getenv('EMAIL_PORT')  # Порт вашего SMTP-сервера
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Ваш адрес электронной почты
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Пароль от вашей учетной записи
+EMAIL_USE_TLS = True  # Используйте True, если ваш SMTP-сервер использует TLS
 
 
 
@@ -92,7 +100,7 @@ ROOT_URLCONF = 'stonepark.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
