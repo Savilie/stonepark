@@ -27,7 +27,7 @@ export default function ModalItemCard(product) {
           </svg>
         </button>
       </div>
-      <p className=" text-xl w-full text-">{item.full_description}</p>
+      <p className=" text-xl w-full break-words">{item.full_description}</p>
     </div>
   );
 }
