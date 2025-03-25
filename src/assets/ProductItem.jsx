@@ -6,7 +6,7 @@ import "./swiperStyles.css";
 
 export default function ProductItem(product) {
   return (
-    <div className=" bg-[#F8F3ED] w-full overflow-clip rounded-lg shadow-md">
+    <div className=" bg-[#F8F3ED] w-full overflow-clip h-fit rounded-lg shadow-md">
       <Swiper
         modules={[Navigation]}
         slidesPerView={1}
