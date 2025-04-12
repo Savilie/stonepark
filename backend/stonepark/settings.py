@@ -46,7 +46,6 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Пароль от ва
 EMAIL_USE_TLS = True  # Используйте True, если ваш SMTP-сервер использует TLS
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
