@@ -32,19 +32,19 @@ export default function HomePage() {
 
   return (
     <div id="cont" className="scroll-smooth font-['LTSuperior-Regular']">
-      { modalStatus ? 
-          (
-            <div className="relative w-full flex z-1000" >
-              <div onClick={() => changeModalStatus(false)}>
-              <ModalBG/>
-              </div>
-              <ModalWindow/>
+      {modalStatus ?
+        (
+          <div className="relative w-full flex z-1000" >
+            <div onClick={() => changeModalStatus(false)}>
+              <ModalBG />
             </div>
+            <ModalWindow />
+          </div>
         )
         : (null)
       }
       <div className="fixed bottom-[35px] right-[30px] h-[60px] w-[60px] z-100" onClick={() => changeModalStatus(true)}>
-        <FixedCallButton  />
+        <FixedCallButton />
       </div>
       <section className=" relative h-[100vh] max-lg:w-full">
         <div className="px-[12vw] py-[3vh] max-lg:px-8 h-full w-full absolute top-0 left-0 backdrop-blur-[0.1rem]">
@@ -75,8 +75,7 @@ export default function HomePage() {
                 </Link>
               </div>
               <div className="flex flex-col justify-between w-[65%] max-lg:w-auto">
-                <a className="flex items-center cursor-pointer" onClick={() => 
-                {
+                <a className="flex items-center cursor-pointer" onClick={() => {
                   navigator.clipboard.writeText('+7 (989) 421-18-18')
                   alert('Скпировано')
                 }}>
@@ -100,13 +99,13 @@ export default function HomePage() {
           </header>
           <div className="mt-[25vh] text-[#EDE5DB] w-[50%] max-lg:w-full">
             <h1 className=" text-4xl/[2.5rem] font-['LTSuperior-Bold'] max-lg:text-3xl">
-              Мы оптово-розничный парк по продаже камней
+              Мы оптово-розничный парк по продаже камня
             </h1>
             <p className=" text-xl/[3rem] max-lg:text-lg/[3rem]">
               Доставляем по всей России и СНГ
             </p>
             <div onClick={() => changeModalStatus(true)}>
-            <CallButton />
+              <CallButton />
             </div>
           </div>
           <Link
@@ -200,8 +199,7 @@ export default function HomePage() {
           <h3 className="font-['LTSuperior-Bold']">Нужна помощь?</h3>
           <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A] max-lg:w-[17vw]" />
           <p className=" leading-[3vh]">
-            Наши менеджеры помогут вам со всеми вопросами, связанными с
-            доставкой и оплатой
+            Нужна помощь? Наши менеджеры помогут вам подобрать цвет и фракцию камня, а так же рассчитать его количество. Подберут все необходимые материалы к вашему участку! Организуют доставку в любую точку мира!
           </p>
           <p className="font-bold mt-[3vh]">+7 (989) 421-18-18</p>
         </div>
@@ -214,13 +212,13 @@ export default function HomePage() {
         <div className=" flex max-lg:block max-lg:h-fit">
           <div className="text-xl [&_p]:mb-8 w-[35%] max-lg:w-auto">
             <p className=" font-['LTSuperior-Bold']">"Палитра Камня"</p>
-            <p>Село Чалтырь ул. Ростовская 53</p>
+            <p>Село Чалтырь ул. Ростовская 62</p>
             <p>График работы ежедневно с 9:00 до 18:00</p>
             <p>
               Номер для связи <br className=" max-lg:hidden" />
               <a href="https://wa.me/79894211818?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." className=" flex">
                 <svg
-                className=" mr-2"
+                  className=" mr-2"
                   width="28"
                   height="28"
                   viewBox="0 0 28 28"
@@ -237,13 +235,7 @@ export default function HomePage() {
               </a>
             </p>
           </div>
-          <iframe
-            className=" max-lg:w-full"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A45f3329077f8f26ca4b492d78113784768bcf2c8cc5b3345a4777300bed75f59&amp;source=constructor"
-            width="938"
-            height="477"
-            frameborder="0"
-          ></iframe>
+          <iframe className=" max-lg:w-full" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aae70337a674aa858540f51e643b53e5463d226ba10eb6f8e3c5af1b7d5f9baf9&amp;source=constructor" width="938" height="477" frameborder="0"></iframe>
         </div>
         <div className=" flex justify-center mt-[10vh]">
           <RouterLink to="/Catalog">
