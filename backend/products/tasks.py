@@ -17,7 +17,7 @@ def send_email_async(name, number, info):
     html_message = render_to_string('bids/bid.html', {'number': number, 'name': name, 'info': info })
     plain_message = strip_tags(html_message)
     try:
-        recipient_list = [settings.EMAIL_HOST_USER]
+        recipient_list = [settings.EMAIL_RECIPIENT]
         send_mail(
             subject=f"Новая заявка от {current_time}",
             message=plain_message,
