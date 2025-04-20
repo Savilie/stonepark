@@ -43,6 +43,7 @@ EMAIL_HOST = os.getenv('EMAIL_HOST')  # Хост вашего SMTP-сервер�
 EMAIL_PORT = os.getenv('EMAIL_PORT')  # Порт вашего SMTP-сервера
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Ваш адрес электронной почты
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Пароль от вашей учетной записи
+EMAIL_RECIPIENT = os.getenv('EMAIL_RECIPIENT')
 EMAIL_USE_TLS = True  # Используйте True, если ваш SMTP-сервер использует TLS
 
 
