@@ -100,7 +100,7 @@ export default function HomePage() {
           </header>
           <div className="mt-[25vh] text-[#EDE5DB] w-[50%] max-lg:w-full">
             <h1 className=" text-4xl/[2.5rem] font-['LTSuperior-Bold'] max-lg:text-3xl">
-              Мы оптово-розничный парк по продаже камней
+              Мы оптово-розничный парк по продаже камня
             </h1>
             <p className=" text-xl/[3rem] max-lg:text-lg/[3rem]">
               Доставляем по всей России и СНГ
@@ -127,7 +127,7 @@ export default function HomePage() {
             </svg>
           </Link>
         </div>
-        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(public/bg.png)] bg-no-repeat bg-cover"></div>
+        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(/bg.png)] bg-no-repeat bg-cover"></div>
       </section>
       <SectionTransition text="Натуральная красота в каждом камушке!" />
       <section
@@ -200,8 +200,7 @@ export default function HomePage() {
           <h3 className="font-['LTSuperior-Bold']">Нужна помощь?</h3>
           <div className=" my-[1vh] border-b-3 w-[4.5vw] border-[#7BA35A] max-lg:w-[17vw]" />
           <p className=" leading-[3vh]">
-            Наши менеджеры помогут вам со всеми вопросами, связанными с
-            доставкой и оплатой
+            Наши менеджеры помогут вам подобрать цвет и фракцию камня, а так же рассчитать его количество. Подберут все необходимые материалы к вашему участку! Организуют доставку в любую точку мира!
           </p>
           <p className="font-bold mt-[3vh]">+7 (989) 421-18-18</p>
         </div>
