@@ -99,7 +99,7 @@ export default function HomePage() {
           </header>
           <div className="mt-[25vh] text-[#EDE5DB] w-[50%] max-lg:w-full">
             <h1 className=" text-4xl/[2.5rem] font-['LTSuperior-Bold'] max-lg:text-3xl">
-              Мы оптово-розничный парк по продаже камня
+              Мы оптово-розничный склад по продаже камня
             </h1>
             <p className=" text-xl/[3rem] max-lg:text-lg/[3rem]">
               Доставляем по всей России и СНГ
