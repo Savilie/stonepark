@@ -126,7 +126,7 @@ export default function HomePage() {
             </svg>
           </Link>
         </div>
-        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(public/bg.png)] bg-no-repeat bg-cover"></div>
+        <div className="absolute z-[-1] top-0 left-0 w-full h-full bg-[url(bg.png)] bg-no-repeat bg-cover"></div>
       </section>
       <SectionTransition text="Натуральная красота в каждом камушке!" />
       <section

@@ -10,6 +10,8 @@ import ModalBG from "../assets/ModalBG";
 import ModalWindow from "../assets/ModalWindow";
 import { SwiperSlide, Swiper } from "swiper/react";
 import ModalItemCard from "../assets/ModalItemCard";
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css/autoplay';
 
 export default function CatalogPage() {
   const [viewPortWidth, setViewPortWidth] = useState([window.innerWidth])
@@ -109,7 +111,18 @@ export default function CatalogPage() {
           </RouterLink>
         </div>
         <div className=" w-full">
-          <Swiper slidesPerView={categoriesSlidesNumber} spaceBetween={10} className={`gap-x-4 mt-3 overflow-x-hidden flex`}>
+          <Swiper 
+            slidesPerView={categoriesSlidesNumber} 
+            spaceBetween={10} 
+            className={`gap-x-4 mt-3 overflow-x-hidden flex`}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              stopOnLastSlide: true,
+              pauseOnMouseEnter: true,
+            }}
+          >
             {categories.map((el) => {
               let colors = "";
               if (currentCategory == el.id) {
