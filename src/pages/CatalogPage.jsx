@@ -119,7 +119,7 @@ export default function CatalogPage() {
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
-              stopOnLastSlide: true,
+              stopOnLastSlide: false,
               pauseOnMouseEnter: true,
             }}
           >

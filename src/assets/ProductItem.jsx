@@ -3,6 +3,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./swiperStyles.css";
+import React from "react";
 
 export default function ProductItem(product) {
   return (
@@ -65,7 +66,7 @@ export default function ProductItem(product) {
       <div className=" flex flex-col justify-between p-4 h-[55%]">
         <div>
           <p className=" text-[#7BA05C]">{product.data.name}</p>
-          <p>{product.data.short_description}</p>
+          <p style={{ whiteSpace: 'pre-line' }}>{product.data.short_description}</p>
         </div>
         <p
           className=" cursor-pointer text-[#7BA05C]"
