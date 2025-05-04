@@ -1,0 +1,13 @@
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+
+Allow: /catalog/
+
+Sitemap: https://palitrakamnya.ru/sitemap.xml
+
+Crawl-delay: 10
+
+Host: https://palitrakamnya.ru 
