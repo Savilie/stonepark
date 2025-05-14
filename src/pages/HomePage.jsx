@@ -212,7 +212,7 @@ export default function HomePage() {
         <div className=" flex max-lg:block max-lg:h-fit">
           <div className="text-xl [&_p]:mb-8 w-[35%] max-lg:w-auto">
             <p className=" font-['LTSuperior-Bold']">"Палитра Камня"</p>
-            <p>Село Чалтырь ул. Ростовская 62</p>
+            <p>Село Чалтырь ул. Ростовская 53</p>
             <p>График работы ежедневно с 9:00 до 18:00</p>
             <p>
               Номер для связи <br className=" max-lg:hidden" />

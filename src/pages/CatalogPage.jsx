@@ -16,7 +16,6 @@ import 'swiper/css/autoplay';
 export default function CatalogPage() {
   const [viewPortWidth, setViewPortWidth] = useState([window.innerWidth])
   const [categories, setCategories] = useState([]);
-  const [categoriesSlidesNumber, setCategoriesSlidesNumber] = useState(6)
   const [modalStatus, setModalStatus] = useState(false);
   const [modalType, setModalType] = useState(false)
   //false = bid, true = itemCard
@@ -26,10 +25,6 @@ export default function CatalogPage() {
     setModalType(type);
     setCurrentItemData(item);
   }
-
-  useEffect(() => {
-    setCategoriesSlidesNumber((viewPortWidth < 1024) ? 1.7 : 6)
-  }, [viewPortWidth])
 
   useEffect(() => {
     axios
@@ -110,47 +105,28 @@ export default function CatalogPage() {
             Вернуться на главную
           </RouterLink>
         </div>
-        <div className=" w-full">
-          <Swiper 
-            slidesPerView={categoriesSlidesNumber} 
-            spaceBetween={10} 
-            className={`gap-x-4 mt-3 overflow-x-hidden flex`}
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              stopOnLastSlide: false,
-              pauseOnMouseEnter: true,
-            }}
-          >
-            {categories.map((el) => {
-              let colors = "";
-              if (currentCategory == el.id) {
-                colors =
-                  "text-[#EDE5DB] my-2 bg-[#7BA35A] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
-              } else {
-                colors =
-                  "text-[#7C6845] my-2 bg-[#FAF3EB] py-0.5 rounded-lg text-center shadow-md w-[15%] shrink-0 max-lg:w-[80%] cursor-pointer max-lg:p-2";
-              }
-              return (
-                <SwiperSlide
-                  className={colors}
-                  key={el.id}
-                  onClick={() => {
-                    if (currentCategory !== el.id) {
-                      setCurrentCategory(el.id);
-                    } else {
-                      setCurrentCategory(0);
-                    }
-                  }}
-                >
-                  
-                    <CategoryButton key={el.id} name={el.name} />
-                  
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+        <div className="flex flex-wrap mt-4 pb-2 gap-2">
+          {categories.map((el) => {
+            let colors = currentCategory == el.id
+              ? "text-[#EDE5DB] bg-[#7BA35A] py-1 px-3 rounded-lg text-center shadow-md cursor-pointer"
+              : "text-[#7C6845] bg-[#FAF3EB] py-1 px-3 rounded-lg text-center shadow-md cursor-pointer";
+            
+            return (
+              <div
+                className={colors}
+                key={el.id}
+                onClick={() => {
+                  if (currentCategory !== el.id) {
+                    setCurrentCategory(el.id);
+                  } else {
+                    setCurrentCategory(0);
+                  }
+                }}
+              >
+                <CategoryButton key={el.id} name={el.name} />
+              </div>
+            );
+          })}
         </div>
         <div>
           {categories.map((category) => {
