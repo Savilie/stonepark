@@ -160,14 +160,11 @@ export default function HomePage() {
             Примеры дизайнов наших клиентов
           </h3>
           <p className=" text-md">Можете посмотреть в наших соцсетях</p>
-          <div className=" flex w-[12vw] mt-[2vh] justify-between items-center">
-            <a href="https://web.telegram.org">
+          <div className=" flex w-[8vw] mt-[2vh] justify-between items-center">
+            <a href="https://t.me/palitrakamnya61">
               <img className="size-10" src="public\tg.svg" alt="Ссылка на телеграм" />
             </a>
-            <a href="https://instagram.com">
-              <img className="size-10" src="public\insta.svg" alt="Ссылка на инстаграм" />
-            </a>
-            <a href="https://vk.com">
+            <a href="https://vk.com/palitrakamny">
               <img className="size-10" src="public\vk.svg" alt="Ссылка на телеграм" />
             </a>
           </div>
@@ -216,9 +213,9 @@ export default function HomePage() {
             <p>График работы ежедневно с 9:00 до 18:00</p>
             <p>
               Номер для связи <br className=" max-lg:hidden" />
-              <a href="https://wa.me/79894211818?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." className=" flex">
+              <a href="https://wa.me/79894211818?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." className=" flex w-60">
                 <svg
-                  className=" mr-2"
+                  className="mr-2"
                   width="28"
                   height="28"
                   viewBox="0 0 28 28"
