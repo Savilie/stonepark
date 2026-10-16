@@ -52,7 +52,11 @@ DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = [os.getenv('HOST')]
 
-CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF'),]
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in (os.getenv('CSRF_TRUSTED_ORIGINS') or os.getenv('CSRF') or '').split(',')
+    if origin.strip()
+]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

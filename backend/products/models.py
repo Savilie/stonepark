@@ -6,6 +6,7 @@ from .validators import validate_image_extension
 
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name="Имя категории")
+    order = models.PositiveIntegerField(default=0, db_index=True, verbose_name="Порядок")
 
     def __str__(self):
         return self.name
@@ -13,15 +14,15 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Категории'
         verbose_name = "Категория"
+        ordering = ['order', 'id']
 
 
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="Имя товара")
-
     short_description = models.TextField(max_length=200, verbose_name="Краткое описание")
     full_description = models.TextField(max_length=3000, verbose_name="Полное описание")
-
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категория")
+    order = models.PositiveIntegerField(default=0, db_index=True, verbose_name="Порядок")
 
     def __str__(self):
         return self.name
@@ -29,6 +30,7 @@ class Product(models.Model):
     class Meta:
         verbose_name_plural = 'Товары'
         verbose_name = "Товар"
+        ordering = ['order', 'id']
 
 
 class ProductImage(models.Model):

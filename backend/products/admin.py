@@ -15,6 +15,8 @@ class ProductInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInline]
+    list_display = ('name', 'category', 'order')
+    list_editable = ('order',)
 
 
 @admin.register(ProductImage)
@@ -25,6 +27,8 @@ class ProductImageAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     inlines = [ProductInline]
+    list_display = ('name', 'order')
+    list_editable = ('order',)
 
 
 @admin.register(Bid)
