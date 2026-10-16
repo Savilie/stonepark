@@ -131,7 +131,7 @@ export default function HomePage() {
       <SectionTransition text="Натуральная красота в каждом камушке!" />
       <section
         id="reviews"
-        className=" flex flex-col items-center justify-between py-[8vh] h-[100vh] bg-[#EDE5DB] max-lg:h-fit"
+        className="flex flex-col items-center justify-between gap-10 py-[8vh] min-h-[100vh] bg-[#EDE5DB] max-lg:min-h-0 max-lg:h-fit"
       >
         <RouterLink to="/Catalog">
           <h2 className=" text-3xl font-['LTSuperior-Bold'] text-[#EDE5DB] bg-[#7BA35A] px-38 py-3 rounded-md max-lg:px-16 max-lg:text-2xl">
@@ -148,10 +148,12 @@ export default function HomePage() {
           <h3 className="text-2xl font-['LTSuperior-Bold'] max-lg:hidden">
             Что наши клиенты говорят о нас?
           </h3>
-          <div className=" grid grid-cols-3 gap-2 justify-between w-[60vw] mt-10 max-lg:block max-lg:w-[85%] max-lg:mt-5">
-            {reviews.map((el) => {
-              return <CommentCard key={el.id} obj={el} />;
-            })}
+          <div className="columns-3 gap-2 w-[60vw] mt-10 max-lg:columns-1 max-lg:w-[85%] max-lg:mt-5">
+            {reviews.map((el) => (
+                <div key={el.id} className="break-inside-avoid mb-2">
+                  <CommentCard obj={el}/>
+                </div>
+            ))}
           </div>
         </div>
         <div className=" flex flex-col items-center max-lg:hidden">
@@ -162,18 +164,18 @@ export default function HomePage() {
           <p className=" text-md">Можете посмотреть в наших соцсетях</p>
           <div className=" flex w-[8vw] mt-[2vh] justify-between items-center">
             <a href="https://t.me/palitrakamnya61">
-              <img className="size-10" src="public\tg.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="public\tg.svg" alt="Ссылка на телеграм"/>
             </a>
             <a href="https://vk.com/palitrakamny">
-              <img className="size-10" src="public\vk.svg" alt="Ссылка на телеграм" />
+              <img className="size-10" src="public\vk.svg" alt="Ссылка на телеграм"/>
             </a>
           </div>
         </div>
       </section>
-      <SectionTransition text="Доставим заказ прямо к вам" />
+      <SectionTransition text="Доставим заказ прямо к вам"/>
       <section
-        id="delivery"
-        className="h-[100vh] bg-[#EDE5DB] items-center flex px-[12vw] max-lg:block max-lg:px-0 max-lg:h-fit"
+          id="delivery"
+          className="h-[100vh] bg-[#EDE5DB] items-center flex px-[12vw] max-lg:block max-lg:px-0 max-lg:h-fit"
       >
         <div className="w-[60%] bg-[#EDE5DB] grid grid-cols-2 max-lg:block max-lg:mx-auto max-lg:w-full max-lg:py-8">
           <img
