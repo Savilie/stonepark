@@ -162,12 +162,18 @@ export default function HomePage() {
             Примеры дизайнов наших клиентов
           </h3>
           <p className=" text-md">Можете посмотреть в наших соцсетях</p>
-          <div className=" flex w-[8vw] mt-[2vh] justify-between items-center">
+          <div className=" flex gap-5 mt-[2vh] items-center">
             <a href="https://t.me/palitrakamnya61">
-              <img className="size-10" src="public\tg.svg" alt="Ссылка на телеграм"/>
+              <img className="size-10 object-contain" src="public\tg.svg" alt="Telegram"/>
             </a>
             <a href="https://vk.com/palitrakamny">
-              <img className="size-10" src="public\vk.svg" alt="Ссылка на телеграм"/>
+              <img className="size-10 object-contain" src="public\vk.svg" alt="ВКонтакте"/>
+            </a>
+            <a href="https://max.ru/join/DynZaBPbdMM9aMues8pFUFzH3Lk78erKRa29FRN-lCc">
+              <img className="size-10 object-contain" src="public\max_colored.svg" alt="Max"/>
+            </a>
+            <a href="https://www.instagram.com/palitrakamnya?exln=emx0cDB5b3Vhc2wy">
+              <img className="size-10 object-contain" src="public\insta.svg" alt="Instagram"/>
             </a>
           </div>
         </div>
@@ -179,13 +185,13 @@ export default function HomePage() {
       >
         <div className="w-[60%] bg-[#EDE5DB] grid grid-cols-2 max-lg:block max-lg:mx-auto max-lg:w-full max-lg:py-8">
           <img
-            className="min-w-[100%]"
-            src="public\Group 5.png"
-            alt="Изображение Грузовика"
+              className="min-w-[100%]"
+              src="public\Group 5.png"
+              alt="Изображение Грузовика"
           />
           <img
-            className="min-w-[100%]"
-            src="public\image 1.png"
+              className="min-w-[100%]"
+              src="public\image 1.png"
             alt="Изображение Грузовика"
           />
           <img
@@ -214,27 +220,15 @@ export default function HomePage() {
             <p>Село Чалтырь ул. Ростовская 53</p>
             <p>График работы ежедневно с 9:00 до 18:00</p>
             <p>
-              Номер для связи <br className=" max-lg:hidden" />
-              <a href="https://wa.me/79894211818?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." className=" flex w-60">
-                <svg
-                  className="mr-2"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23.4 4.54658C22.1774 3.31205 20.7214 2.3332 19.1167 1.66706C17.512 1.00092 15.7908 0.66082 14.0533 0.666576C6.77334 0.666576 0.840004 6.59991 0.840004 13.8799C0.840004 16.2132 1.45334 18.4799 2.6 20.4799L0.733337 27.3332L7.73334 25.4932C9.66667 26.5466 11.84 27.1066 14.0533 27.1066C21.3333 27.1066 27.2667 21.1732 27.2667 13.8932C27.2667 10.3599 25.8933 7.03991 23.4 4.54658ZM14.0533 24.8666C12.08 24.8666 10.1467 24.3332 8.45334 23.3332L8.05334 23.0932L3.89334 24.1866L5 20.1332L4.73334 19.7199C3.63673 17.9693 3.05457 15.9456 3.05334 13.8799C3.05334 7.82658 7.98667 2.89324 14.04 2.89324C16.9733 2.89324 19.7333 4.03991 21.8 6.11991C22.8235 7.13839 23.6346 8.34997 24.1862 9.68435C24.7378 11.0187 25.0189 12.4494 25.0133 13.8932C25.04 19.9466 20.1067 24.8666 14.0533 24.8666ZM20.08 16.6532C19.7467 16.4932 18.12 15.6932 17.8267 15.5732C17.52 15.4666 17.3067 15.4132 17.08 15.7332C16.8533 16.0666 16.2267 16.8132 16.04 17.0266C15.8533 17.2532 15.6533 17.2799 15.32 17.1066C14.9867 16.9466 13.92 16.5866 12.6667 15.4666C11.68 14.5866 11.0267 13.5066 10.8267 13.1732C10.64 12.8399 10.8 12.6666 10.9733 12.4932C11.12 12.3466 11.3067 12.1066 11.4667 11.9199C11.6267 11.7332 11.6933 11.5866 11.8 11.3732C11.9067 11.1466 11.8533 10.9599 11.7733 10.7999C11.6933 10.6399 11.0267 9.01324 10.76 8.34658C10.4933 7.70658 10.2133 7.78658 10.0133 7.77324H9.37334C9.14667 7.77324 8.8 7.85324 8.49334 8.18658C8.2 8.51991 7.34667 9.31991 7.34667 10.9466C7.34667 12.5732 8.53334 14.1466 8.69334 14.3599C8.85334 14.5866 11.0267 17.9199 14.3333 19.3466C15.12 19.6932 15.7333 19.8932 16.2133 20.0399C17 20.2932 17.72 20.2532 18.2933 20.1732C18.9333 20.0799 20.2533 19.3732 20.52 18.5999C20.8 17.8266 20.8 17.1732 20.7067 17.0266C20.6133 16.8799 20.4133 16.8132 20.08 16.6532Z"
-                    fill="#7EC940"
-                  />
-                </svg>
-
-                <span className=" underline">+7 (989) 421-18-18</span>
+              Номер для связи <br className=" max-lg:hidden"/>
+              <a href="https://max.ru/join/DynZaBPbdMM9aMues8pFUFzH3Lk78erKRa29FRN-lCc" className=" flex w-60">
+                <img className="mr-2 size-7 object-contain" src="/public/max_colored.svg" alt="Max"/>
+                <span className=" underline">+7 (989) 421-18-18</span>
               </a>
             </p>
           </div>
-          <iframe className=" max-lg:w-full" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aae70337a674aa858540f51e643b53e5463d226ba10eb6f8e3c5af1b7d5f9baf9&amp;source=constructor" width="938" height="477" frameborder="0"></iframe>
+          <iframe className=" max-lg:w-full"
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Aae70337a674aa858540f51e643b53e5463d226ba10eb6f8e3c5af1b7d5f9baf9&amp;source=constructor" width="938" height="477" frameborder="0"></iframe>
         </div>
         <div className=" flex justify-center mt-[10vh]">
           <RouterLink to="/Catalog">
